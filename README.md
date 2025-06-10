@@ -34,7 +34,7 @@ Some structural and UI ideas are also borrowed from [chat-gpt-sfdc](https://gith
 
 ## Dashboard Example 📊
 
-Here's a visual example of a full **Deployment Dashboard** built using the results provided by this app:
+Here's a visual example of a full Deployment Dashboard built using the results provided by this app, with filters for **time range** and **deployment status**.
 
 ![Dashboard](media/images/deploy_dashboard.png)
 
