@@ -3,7 +3,7 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9e802cb50f2f44f28364efb1b68a0c1b)](https://app.codacy.com/gh/mpdigitals/lug-deploy-tracker-sfdc/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/9e802cb50f2f44f28364efb1b68a0c1b)](https://app.codacy.com/gh/mpdigitals/lug-deploy-tracker-sfdc/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
 **Beta version of a 100% native Salesforce solution to visually track, analyze and review deployment activity over time**, complementing Salesforce’s default DeployRequest retention with extended historical tracking.
-It also allows you to easily review **deployed components**, quickly identify **failed deployments**, access **deployment status** directly from result records, and gain deeper visibility into your deployment process.
+It also allows you to easily review **deployed components**, quickly identify **failed deployments**, access **deployment status** directly from deployment result records, and gain deeper visibility into your deployment process.
 
 https://github.com/user-attachments/assets/fe78ea5e-d8f0-4544-bb6c-1fa737117af2
 
