@@ -151,8 +151,8 @@ Planned features for upcoming versions:
 - 🗑️ **Purge management**: implement automatic cleanup of old `DeployResult__c` records after configurable retention period.
 - 📈 **Lines covered / FlowCoverage**: expose visual coverage metrics for both code and flows.
 - 🗂️ **Component and Test Class Summary Views**:
-  - Provide a clear **list of component names** that have errors or warnings (without duplicating full line-by-line error details).
-  - Provide a clear **list of test classes** that have errors or coverage warnings (without showing individual test methods, which are already detailed elsewhere).
+  - Provide a clear **list of component names** that have errors or warnings (without duplicating full line-by-line error already detailed).
+  - Provide a clear **list of test classes** that have errors or coverage warnings (without showing individual test methods, which are already detailed).
     
 ---
 
