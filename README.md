@@ -39,7 +39,7 @@ Here's a visual example of a full **Deployment Dashboard** built using the resul
 
 ---
 
-## Installation 🚀
+## Installation 📥
 
 You can install **Lug Deploy Tracker** in your Salesforce org using one of the following links:
 
