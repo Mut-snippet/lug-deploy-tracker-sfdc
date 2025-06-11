@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/9e802cb50f2f44f28364efb1b68a0c1b)](https://app.codacy.com/gh/mpdigitals/lug-deploy-tracker-sfdc/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/9e802cb50f2f44f28364efb1b68a0c1b)](https://app.codacy.com/gh/mpdigitals/lug-deploy-tracker-sfdc/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_coverage)
 
-**Beta version of a 100% native Salesforce solution to visually track, analyze and review deployment activity over time**, complementing Salesforce’s default DeployRequest retention with extended historical tracking.
+**Beta version of a 100% native Salesforce solution to visually track, analyze and review deployment activity over time**, complementing Salesforce’s default DeployRequest retention with extended historical tracking.  
 It also allows you to easily review **deployed components**, quickly identify **failed deployments**, access **deployment status** directly from deployment result records, and gain deeper visibility into your deployment process.
 
 ## Installation 📥
@@ -23,8 +23,6 @@ You can install **Lug Deploy Tracker** in your Salesforce org using one of the f
 </div>
 
 ---
-
-https://github.com/user-attachments/assets/fe78ea5e-d8f0-4544-bb6c-1fa737117af2
 
 ## Overview ✨
 
@@ -143,6 +141,73 @@ Related List of tests on a `DeployResult__c` record:
 
 ---
 
+## Architecture Overview 🏗️
+
+**This Salesforce Diagrams template (deploy_schema) shows how LugDeployTracker uses asynchronous batch processing with Tooling API and Platform Events to synchronize and track DeployRequest data.** Progress events (DeployProgress__e) are published after commit and consumed in real time by a Lightning Web Component to display batch progress.
+
+![Architecture Diagram](media/images/deploy_schema.png)
+
+---
+
+### Frontend
+
+### User Interface Layer
+
+- `deploySettingsApp` — Main container app
+- `deployHeader` — Application header
+- `deploySyncSettings` — Manual synchronization UI
+- `deployScheduleSettings` — Schedule settings (start date, unit, frequency)
+- `deployAdvancedSettings` — Advanced options (batch size, named credential, intermediate states)
+- `deployErrorHandler` — Reusable error handling component
+- `deployToastService` — Reusable toast notification service
+
+### Backend
+
+#### Service Layer
+
+- `DeployService` — Entry point for synchronization logic (called by LWC)
+- `DeployScheduleService` — Handles schedule logic (`System.schedule`)
+- `DeployRequestBatch` — Batch Apex that performs DeployRequest synchronization (Tooling API)
+- `DeployServiceTest` and related test classes — Test coverage
+
+#### Integration Layer
+
+- `DeployToolingClient` — Integration with Salesforce Tooling API (fetch DeployRequest and DeployResult data)
+- `DeployToolingClientInterface` — Interface for Tooling Client
+- `DeployToolingApiMock` — Mock for Tooling API tests
+
+#### Data Access Layer
+
+- `DeploySetupRepository` — Manages configuration data and settings persistence (Custom Setting)
+- `DeployValidator` — Validates configuration and access
+- `DeployUtils` — Utility functions (MD5 hashing, cron generation, date utils, etc.)
+- `DeployConstants` — Centralized constants (configuration and error messages)
+
+#### Data Mapping Layer
+
+- `DeployApiWrapper` — Deserializes Tooling API responses into wrapper objects (DeployRequest, Result, Details, Components, Tests)
+- `DeployResultMapper` — Maps `DeployResult__c` from Tooling API data
+- `DeployResultComponentMapper` — Maps `DeployResultComponent__c` from Tooling API data
+- `DeployResultTestMapper` — Maps `DeployResultTest__c` from Tooling API data
+
+### Platform Events
+
+- **Progress Events** — The batch process publishes progress updates through the `DeployProgress__e` Platform Event, which drives the live progress bar in the LWC during synchronization.
+
+### Data Model
+
+#### Custom Objects
+
+- `DeployResult__c` — Deployment master record
+- `DeployResultComponent__c` — Deployed components (per DeployResult)
+- `DeployResultTest__c` — Test results (per DeployResult)
+
+#### Configuration
+
+- `DeployConfiguration__c` — Hierarchical Custom Setting (used for operational state during execution and by the LWC)
+
+---
+
 ## Next Steps 🚀
 
 Planned features for upcoming versions:
@@ -169,5 +234,3 @@ Feedback, ideas, and contributions are very welcome!
 Feel free to reach out:
 
 📧 **develop@mpdigitals.com**
-
----
