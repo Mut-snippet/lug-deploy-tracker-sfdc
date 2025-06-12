@@ -180,6 +180,8 @@ Related List of tests on a `DeployResult__c` record:
 
 - `DeploySetupRepository` — Manages configuration data and settings persistence (Custom Setting)
 - `DeployValidator` — Validates configuration and access
+- `DeployAccessValidator` — Validates user access permissions
+- `DeployCoreUtils` — Core utility functions for configuration management, cron scheduling, and integration with scheduling services  
 - `DeployUtils` — Utility functions (MD5 hashing, cron generation, date utils, etc.)
 - `DeployConstants` — Centralized constants (configuration and error messages)
 
