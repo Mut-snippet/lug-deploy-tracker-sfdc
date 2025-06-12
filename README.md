@@ -33,6 +33,10 @@ It provides advanced scheduling, synchronization, and reporting features to help
 This app is **heavily inspired** (in spirit and in look & feel) by the great [Nebula Logger](https://github.com/jongpie/NebulaLogger) — though much simpler and focused on deployment tracking.  
 Some structural and UI ideas are also borrowed from [chat-gpt-sfdc](https://github.com/ArnasBaronas/chat-gpt-sfdc), a very well-structured LWC Salesforce project.
 
+https://github.com/user-attachments/assets/6962e1a8-2d20-4228-b34d-bcf2e615607b
+
+---
+
 ### Features ⚙️
 
 - 🔍 Synchronize `DeployRequest` records using the Tooling API.
