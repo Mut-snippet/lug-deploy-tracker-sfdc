@@ -153,7 +153,7 @@ Related List of tests on a `DeployResult__c` record:
 
 ---
 
-### Frontend
+### Frontend (LWC)
 
 ### User Interface Layer
 
@@ -165,7 +165,7 @@ Related List of tests on a `DeployResult__c` record:
 - `deployErrorHandler` — Reusable error handling component
 - `deployToastService` — Reusable toast notification service
 
-### Backend
+### Backend (Apex)
 
 #### Service Layer
 
