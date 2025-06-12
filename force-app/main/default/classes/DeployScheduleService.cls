@@ -44,14 +44,19 @@ public with sharing class DeployScheduleService implements Schedulable {
             ? cfg.frequencyUnit.toLowerCase()
             : '';
 
-        if (unit == 'days') {
-            nextStart = nextStart.addDays(amount);
-        } else if (unit == 'months') {
-            nextStart = nextStart.addMonths(amount);
-        } else if (unit == 'hours') {
-            nextStart = nextStart.addHours(amount);
-        } else {
-            nextStart = nextStart.addHours(1);
+        switch on unit {
+            when 'days' {
+                nextStart = nextStart.addDays(amount);
+            }
+            when 'months' {
+                nextStart = nextStart.addMonths(amount);
+            }
+            when 'hours' {
+                nextStart = nextStart.addHours(amount);
+            }
+            when else {
+                nextStart = nextStart.addHours(1);
+            }
         }
 
         String cronExpr = DeployUtils.buildCron(nextStart);
