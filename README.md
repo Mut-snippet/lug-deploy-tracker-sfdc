@@ -10,12 +10,12 @@ It also allows you to easily review **deployed components**, quickly identify **
 You can install **Lug Deploy Tracker** in your Salesforce org using one of the following links:
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 48px; margin: 16px 0;">
-  <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tQy0000009mDVIAY" target="_blank" style="text-decoration: none;">
+  <a href="https://login.salesforce.com/packaging/installPackage.apexp?p0=04tQy0000009q5pIAA" target="_blank" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Install%20in%20Developer%20Edition-Unlocked%20Package-brightgreen?style=for-the-badge" 
          alt="Install in Developer Edition"
          style="height: 30px;"/>
   </a>
-  <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tQy0000009mDVIAY" target="_blank" style="text-decoration: none;">
+  <a href="https://test.salesforce.com/packaging/installPackage.apexp?p0=04tQy0000009q5pIAA" target="_blank" style="text-decoration: none;">
     <img src="https://img.shields.io/badge/Install%20in%20Sandbox-Unlocked%20Package-brightgreen?style=for-the-badge" 
          alt="Install in Sandbox"
          style="height: 30px;"/>
